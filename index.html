@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pro Runner</title>
+        <meta charset='utf-8'>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Titan+One&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href="style.css">
+    </head>
+
+    <body>
+        <div id="start">
+            <h1 class="center">PRO RUNNER</h1>
+            <div id="Normal" onclick="normal()">EASY MODE</div>
+            <div id="Hacker" onclick="hard()">HARD MODE</div>
+        </div>
+        <div id="game">
+            <h1 id="title">PRO RUNNER</h1>
+            <h3 id="score">Score: 0</h3>
+            <h3 id="highscore">HighScore: </h3>
+            <canvas id='mygame' width="800px" height="440px"></canvas>
+        </div>    
+        <div id="overlay">
+            <h2>GAME OVER</h2>
+            <h2 id="urscore">Score: </h2>
+            <button class="again" onclick="location.reload()">Restart</button>
+        </div>
+
+         <!-- SOUND EFFECTS -->
+        <audio id="jump">
+            <!-- <source src="jump.mp3" type="audio/mp3"> -->
+            <source src="jump.wav" type="audio/wav">
+        </audio>
+        <audio id="gameover">
+            <source src="go.wav" type="audio/wav">
+        </audio>
+        <audio id="power">
+            <source src="powerup.mp3" type="audio/mp3">
+        </audio>
+        <script>
+            function normal(){
+                document.getElementById("start").style.display="none";
+                document.getElementById("game").style.display="block";
+                var script=document.createElement('script');
+                script.src="script.js";
+                document.head.appendChild(script);
+            }
+            function hard(){
+                document.getElementById("start").style.display="none";
+                document.getElementById("game").style.display="block";
+                var script=document.createElement('script');
+                script.src="hacker.js";
+                document.head.appendChild(script);
+            }
+        </script>
+   </body>
+</html>
